@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SpellChecker</title>
+	<link rel="stylesheet" href="{{url_for('static',filename='css/class.css')}}"
+
+</head>
+<body bgcolor="skyblue">
+
+	<h2 align="center" style="color:Blue;">SPELL CHECKER</h2>
+	<h3 align="left"  style="color:red;">Enter text:</h3>
+	<form action="{{ url_for('spell') }}" method="POST" onsubmit="WriteToFile(this)">
+	<div><textarea name="incor" placeholder="Enter your text here..."  rows="20" cols="50"></textarea></div>
+	<input type="submit" value="Spellcheck">
+
+    </form>
+	<br><br>
+	<div>
+    </div><br><br>
+    <h3 style="color:red;">Corrected Text:</h3>
+    
+    <div><textarea autofocus="right" placeholder="Corrext text will be displayed here:" name="corr" rows="20" cols="50">{{correct}}</textarea>
+
+    </div>
+     <form action="{{url_for('dele')}}" method="POST" onsubmit="Delete(this)">
+		<input type="submit" value="Clear">
+	 </form>
+	 
+
+    
+
+</body>
+
+</html>
